@@ -1,5 +1,6 @@
 <template>
     <div class="mt-4">
+        <h1>{{ props.post.image }}</h1>
         <section class="relative py-16">
             <div class="container mx-auto px-4">
                 <div
@@ -44,15 +45,14 @@
                         </div>
                         <div class="text-center mt-12">
                             <h3 class="text-4xl font-semibold leading-normal mb-2 text-gray-800 mb-2">
-                                Jenna Stones
+                                {{ props.post.title }}
                             </h3>
                             <div class="text-sm leading-normal mt-0 mb-2 text-gray-500 font-bold uppercase">
                                 <i class="fas fa-map-marker-alt mr-2 text-lg text-gray-500"></i>
-                                Los Angeles, California
+                                {{ props.post.title }} - {{ props.post.height }}
                             </div>
                             <div class="mb-2 text-gray-700 mt-10">
-                                <i class="fas fa-briefcase mr-2 text-lg text-gray-500"></i>Solution Manager - Creative
-                                Tim Officer
+                                <i class="fas fa-briefcase mr-2 text-lg text-gray-500"></i>{{ props.post.countries }}
                             </div>
                             <div class="mb-2 text-gray-700">
                                 <i class="fas fa-university mr-2 text-lg text-gray-500"></i>University of Computer
@@ -63,13 +63,9 @@
                             <div class="flex flex-wrap justify-center">
                                 <div class="w-full lg:w-9/12 px-4">
                                     <p class="mb-4 text-lg leading-relaxed text-gray-800">
-                                        An artist of considerable range, Jenna the name taken by
-                                        Melbourne-raised, Brooklyn-based Nick Murphy writes,
-                                        performs and records all of his own music, giving it a
-                                        warm, intimate feel with a solid groove structure. An
-                                        artist of considerable range.
+                                        {{ props.post.description }}
                                     </p>
-                                    <a href="#pablo" class="font-normal text-pink-500">Show more</a>
+                                    <NuxtLink :to="`posts-api/${props.post.id}`" class="font-normal text-pink-500">Show more</NuxtLink>
                                 </div>
                             </div>
                         </div>
